@@ -1,0 +1,63 @@
+package main
+
+var profilePageHTMLString = `<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sticky Labs | Apply</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="..ico" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="/Sticky-Labs/application.css" />
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+  </head>
+  <body>
+    <div class="body_wrap">
+      <div class="profile_content">
+        <img src="/Sticky-Labs/images/bg.svg" alt="" class="bg_img" />
+        <a href="/waitlist/api/logout" class="logout">
+          <ion-icon name="log-out-outline"></ion-icon>
+          <span>Logout</span>
+        </a>
+        <div class="popup">
+          <header>
+            <span>Make the world a sticky place.</span>
+          </header>
+          <div class="popup_content">
+            <p>Send an invite to your frens and foes.</p>
+            <ul class="icons">
+              <a href=%s><i class="fab fa-twitter"></i></a>
+              <!-- <a href="#"><i class="fab fa-discord"></i></a> -->
+              <a href=%s><i class="fab fa-reddit"></i></a>
+              <a href=%s><i class="fab fa-telegram-plane"></i></a>
+            </ul>
+            <p>Or copy link</p>
+            <div class="field">
+              <i class="url-icon uil uil-link"></i>
+              <input
+                type="text"
+                readonly
+                placeholder=%s
+              />
+              <button class="popup_button">Copy</button>
+            </div>
+            <p class="invite_count">Invite count: <span>%d</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://kit.fontawesome.com/a7f6d58f31.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="/Sticky-Labs/js/script.js"></script>
+  </body>
+</html>
+`

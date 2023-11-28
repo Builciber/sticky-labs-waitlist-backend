@@ -1,0 +1,485 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700&display=swap");
+@font-face {
+  font-family: "Bubblemark Fill";
+  src: url(./bubblemarkfill-regular.ttf);
+}
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  background: rgb(255, 255, 255);
+  width: 7px;
+}
+::-webkit-scrollbar-track {
+  display: none;
+  max-height: 500px;
+  background: #ffffff;
+  border-radius: 50px;
+}
+::-webkit-scrollbar-thumb {
+  background: #f094ff;
+  border-radius: 10px;
+}
+
+svg {
+  display: none;
+}
+
+.body_wrap {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  /* height: 100vh; */
+  gap: 0;
+}
+.sidenav {
+  width: 35%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #111;
+  overflow-x: hidden;
+}
+.content {
+  width: 65%;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  z-index: 1;
+}
+.profile_content {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  z-index: 1;
+}
+
+.logout {
+  width: 150px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  border-radius: 50px;
+  border: none;
+  outline: none;
+  background: #5b6159;
+  color: #fff;
+  font-family: "Manrope";
+}
+
+.bg_img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+.section1 {
+  flex: 1;
+  background-color: rgb(136, 111, 43);
+  height: 60vh;
+}
+.section1 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.section2 {
+  background: #efe6ff;
+  height: 40vh;
+  position: relative;
+  overflow: hidden;
+}
+.section2_mobile {
+  background: #efe6ff;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  display: none;
+}
+
+.section2 img {
+  z-index: 10;
+  width: 550px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.copyright {
+  position: absolute;
+  left: 50%;
+  top: 20px;
+  transform: translateX(-50%);
+  color: #000;
+  background: #fff;
+  width: 380px;
+  padding: 10px 20px;
+  border-radius: 50px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-family: "Manrope";
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.wave2app {
+  font-family: "Bubblemark Fill", sans-serif;
+  font-size: 5vw;
+  color: #5b6159;
+}
+.connectBtn {
+  border-radius: 80px;
+  border: 3.382px solid #141b41;
+  background: #abfe79;
+  width: 300px;
+  height: 60px;
+  cursor: pointer;
+  color: #141b41;
+  text-align: center;
+  font-family: "Manrope";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-decoration: none;
+}
+
+.twitter_welcome {
+  display: flex;
+  align-items: center;
+}
+
+.twitter_welcome p {
+  color: #5b6159;
+  font-size: 18px;
+}
+
+.twitter_welcome img {
+  width: 35px;
+  margin-top: -10px;
+}
+
+.twitter_welcome span {
+  font-weight: bold;
+}
+
+#form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#form #emailInput,
+#form #walletInput {
+  width: 400px;
+  height: 60px;
+  background: #fff;
+  outline: none;
+  border: 4px solid #5b6258;
+  padding: 10px 10px 10px 25px;
+  border-radius: 50px;
+  font-family: "Manrope";
+  font-style: 18px;
+  /* margin-bottom: 7px; */
+}
+
+#form .input-box {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+#emailError,
+#walletError {
+  display: block;
+  color: #9e4040;
+  font-weight: 500;
+  padding: 5px;
+}
+
+#form.invalid .input-box::before {
+  content: "";
+  position: absolute;
+  right: 12px;
+  top: 16px;
+  width: 24px;
+  height: 24px;
+  background: url(https://fadzrinmadu.github.io/hosted-assets/email-validation-check-using-javascript/invalid.png);
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+
+#form.valid .input-box::before {
+  content: "";
+  position: absolute;
+  right: 12px;
+  top: 16px;
+  width: 24px;
+  height: 24px;
+  background: url(https://fadzrinmadu.github.io/hosted-assets/email-validation-check-using-javascript/valid.png);
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+
+.popup {
+  position: absolute;
+  left: 50%;
+}
+.popup_button {
+  outline: none;
+  cursor: pointer;
+  font-weight: 500;
+  border-radius: 4px;
+  border: 2px solid transparent;
+  transition: background 0.1s linear, border-color 0.1s linear,
+    color 0.1s linear;
+}
+
+.popup {
+  background: #fff;
+  padding: 35px 25px;
+  border-radius: 15px;
+  top: 50%;
+  max-width: 500px;
+  width: 100%;
+  opacity: 1;
+  pointer-events: auto;
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+  transform: translate(-50%, -50%) scale(1);
+  transition: top 0s 0.2s ease-in-out, opacity 0.2s 0s ease-in-out,
+    transform 0.2s 0s ease-in-out;
+}
+.popup :is(.icons, .field) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+header span {
+  font-size: 24px;
+  font-weight: bolder;
+  font-family: "Manrope";
+}
+
+.popup .icons {
+  margin: 35px 0 20px 0;
+  padding: 0;
+  list-style: none;
+}
+.popup_content {
+  overflow: hidden;
+}
+.popup_content p {
+  font-size: 16px;
+  margin-top: 5px;
+  font-family: "Manrope";
+  color: #888888;
+}
+.popup_content .icons a {
+  height: 60px;
+  width: 60px;
+  font-size: 28px;
+  text-decoration: none;
+  border: 1px solid transparent;
+}
+
+.icons a {
+  color: #222;
+  background: #f2f2f2;
+  display: flex;
+  align-items: center;
+  border-radius: 50%;
+  justify-content: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.icons a:hover {
+  color: #7d2ae8;
+}
+.icons a:hover i {
+  transform: scale(1.2);
+}
+.popup_content .field {
+  margin: 12px 0 -5px 0;
+  height: 45px;
+  border-radius: 4px;
+  padding: 0 5px;
+  border: 1px solid #e0e0e0;
+}
+.field.active {
+  border-color: #7d2ae8;
+}
+.field i {
+  width: 50px;
+  font-size: 18px;
+  text-align: center;
+}
+.field.active i {
+  color: #7d2ae8;
+}
+.field input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  font-size: 15px;
+}
+.field button {
+  color: #fff;
+  padding: 5px 18px;
+  background: #7d2ae8;
+}
+.field button:hover {
+  background: #8d39fa;
+}
+
+.field input::placeholder {
+  color: #8d9ca5;
+}
+
+.error_section {
+  width: 100%;
+  height: 100vh;
+  background: #efe6ff;
+}
+
+.error_div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.error_div h1 {
+  font-family: "Bubblemark Fill";
+  font-size: 120px;
+  color: #5b6159;
+  text-align: center;
+}
+
+.error_div a {
+  font-family: "Manrope";
+  font-size: 20px;
+  color: #5b6159;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.error_div p {
+  font-family: "Manrope";
+  font-size: 20px;
+  color: #5b6159;
+  font-weight: bold;
+}
+
+.invite_count {
+  margin-top: 20px !important;
+}
+
+.invite_count span {
+  font-weight: bold;
+}
+
+@media screen and (max-width: 1030px) {
+  .body_wrap {
+    flex-direction: column;
+  }
+  .sidenav {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #111;
+    overflow-x: hidden;
+  }
+  .content {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    z-index: 1;
+  }
+
+  .section1 {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1030px) {
+  .wave2app {
+    font-size: 50px;
+    color: #5b6159;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .error_div h1 {
+    font-family: "Bubblemark Fill";
+    font-size: 80px;
+    color: #5b6159;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  #form #email {
+    width: 350px;
+    height: 60px;
+    background: #fff;
+    outline: none;
+    border: 4px solid #5b6258;
+    padding: 10px 10px 10px 25px;
+    border-radius: 50px;
+    font-family: "Manrope";
+    font-style: 18px;
+    /* margin-bottom: 7px; */
+  }
+}
+
+@media screen and (max-width: 370px) {
+  #form #email {
+    width: 300px;
+    height: 60px;
+    background: #fff;
+    outline: none;
+    border: 4px solid #5b6258;
+    padding: 10px 10px 10px 25px;
+    border-radius: 50px;
+    font-family: "Manrope";
+    font-style: 18px;
+    /* margin-bottom: 7px; */
+  }
+}
