@@ -67,7 +67,7 @@ func main() {
 	oauth1Config := &oauth1.Config{
 		ConsumerKey:    cfg.TwitterConsumerKey,
 		ConsumerSecret: cfg.TwitterConsumerSecret,
-		CallbackURL:    "http://localhost:8080/twitter/callback",
+		CallbackURL:    "http://stickylabs.xyz/twitter/callback",
 		Endpoint:       twitterOAuth1.AuthorizeEndpoint,
 	}
 	waitlistApiMux.Get("/logout", cfg.handlerLogout)
@@ -80,7 +80,7 @@ func main() {
 	mux.Mount("/waitlist/", waitlistMux)
 	mux.Mount("/waitlist/api/", waitlistApiMux)
 	server := http.Server{
-		Addr:    "localhost:8080",
+		Addr:    "148.251.175.121:443",
 		Handler: mux,
 	}
 	log.Println("Starting server on localhost at port 8080")

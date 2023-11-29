@@ -25,7 +25,7 @@ func (cfg *apiConfig) handlerHome(w http.ResponseWriter, r *http.Request) {
 			Name:     "waitlist-referrer",
 			Value:    referrer,
 			MaxAge:   604800,
-			Domain:   "localhost",
+			Domain:   "stickylabs.xyz",
 			Path:     "/",
 			HttpOnly: true,
 			Secure:   false,
@@ -56,7 +56,4 @@ func (cfg *apiConfig) handlerHome(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	http.Redirect(w, r, "/waitlist/profile", http.StatusFound)
-	/*w.Header().Set("Content-Type", "text/html")
-	w.WriteHeader(http.StatusOK)
-	w.Write([]byte(fmt.Sprintf(`<p>You are logged in %s!</p><form action="/waitlist/logout" method="post"><input type="submit" value="Logout"></form>`, twitterUsername)))*/
 }

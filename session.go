@@ -35,7 +35,7 @@ func (cfg *apiConfig) issueSessionToken() http.Handler {
 			Name:       "sessionID",
 			Value:      signedSessionToken,
 			Expires:    expirationTimeinUTC,
-			Domain:     "localhost",
+			Domain:     "stickylabs.xyz",
 			Path:       "/",
 			HttpOnly:   true,
 			Secure:     false,
@@ -91,7 +91,7 @@ func hasValidSessionToken(sessionSecret string, r *http.Request) (bool, error) {
 }
 
 func (cfg *apiConfig) handlerIssueSessionToken() http.Handler {
-	//Handler to test that the issuing of session tokens works as designed
+	//A handler to test that the issuing of session tokens works as designed
 	fn := func(w http.ResponseWriter, r *http.Request) {
 		currentTimeInUTC := time.Now().UTC()
 		expirationTimeinUTC := currentTimeInUTC.Add(24 * time.Hour)
@@ -111,7 +111,7 @@ func (cfg *apiConfig) handlerIssueSessionToken() http.Handler {
 			Name:       "sessionID",
 			Value:      signedSessionToken,
 			Expires:    expirationTimeinUTC,
-			Domain:     "localhost",
+			Domain:     "stickylabs.xyz",
 			Path:       "/",
 			HttpOnly:   true,
 			Secure:     false,
@@ -133,7 +133,7 @@ func destroyCookie(cookieName string) http.Cookie {
 	cookie := http.Cookie{
 		Name:     cookieName,
 		MaxAge:   -1,
-		Domain:   "localhost",
+		Domain:   "stickylabs.xyz",
 		Path:     "/",
 		HttpOnly: true,
 		Secure:   false,
