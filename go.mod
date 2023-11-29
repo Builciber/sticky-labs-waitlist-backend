@@ -1,6 +1,6 @@
 module github.com/OkoliDaniel/waitlist-backend
 
-go 1.21.4
+go 1.21.1
 
 replace internal/database v0.0.0 => ./internal/database
 
