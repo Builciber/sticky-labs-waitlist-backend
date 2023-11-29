@@ -80,7 +80,7 @@ func main() {
 	mux.Mount("/waitlist/", waitlistMux)
 	mux.Mount("/waitlist/api/", waitlistApiMux)
 	server := http.Server{
-		Addr:    "148.251.175.121:443",
+		Addr:    "localhost:8080",
 		Handler: mux,
 	}
 	log.Println("Starting server on localhost at port 8080")
