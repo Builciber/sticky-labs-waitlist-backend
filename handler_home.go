@@ -25,7 +25,7 @@ func (cfg *apiConfig) handlerHome(w http.ResponseWriter, r *http.Request) {
 			Name:     "waitlist-referrer",
 			Value:    referrer,
 			MaxAge:   604800,
-			Domain:   "stickylabs.xyz",
+			Domain:   "localhost",
 			Path:     "/",
 			HttpOnly: true,
 			Secure:   false,

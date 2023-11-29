@@ -67,7 +67,7 @@ func main() {
 	oauth1Config := &oauth1.Config{
 		ConsumerKey:    cfg.TwitterConsumerKey,
 		ConsumerSecret: cfg.TwitterConsumerSecret,
-		CallbackURL:    "http://stickylabs.xyz/twitter/callback",
+		CallbackURL:    "http://localhost:8080/twitter/callback",
 		Endpoint:       twitterOAuth1.AuthorizeEndpoint,
 	}
 	waitlistApiMux.Get("/logout", cfg.handlerLogout)
