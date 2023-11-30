@@ -22,6 +22,7 @@ type apiConfig struct {
 	TwitterConsumerKey    string
 	TwitterConsumerSecret string
 	DB                    *database.Queries
+	domain                string
 }
 
 func main() {
@@ -55,6 +56,7 @@ func main() {
 		TwitterConsumerSecret: os.Getenv("TWITTER_CONSUMER_SECRET"),
 		sessionSecret:         os.Getenv("SESSION_SECRET"),
 		DB:                    dbQueries,
+		domain:                os.Getenv("DOMAIN"),
 	}
 	waitlistMux := chi.NewRouter()
 	waitlistMux.Get("/", cfg.handlerHome)
@@ -67,7 +69,7 @@ func main() {
 	oauth1Config := &oauth1.Config{
 		ConsumerKey:    cfg.TwitterConsumerKey,
 		ConsumerSecret: cfg.TwitterConsumerSecret,
-		CallbackURL:    "http:/stickylabs.xyz/twitter/callback",
+		CallbackURL:    fmt.Sprintf("http:/%s/twitter/callback", cfg.domain),
 		Endpoint:       twitterOAuth1.AuthorizeEndpoint,
 	}
 	waitlistApiMux.Get("/logout", cfg.handlerLogout)
