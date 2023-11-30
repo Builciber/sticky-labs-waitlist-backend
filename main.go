@@ -70,7 +70,7 @@ func main() {
 	oauth1Config := &oauth1.Config{
 		ConsumerKey:    cfg.TwitterConsumerKey,
 		ConsumerSecret: cfg.TwitterConsumerSecret,
-		CallbackURL:    fmt.Sprintf("http:/%s/twitter/callback", cfg.domain),
+		CallbackURL:    fmt.Sprintf("http:/%s:8080/twitter/callback", cfg.domain),
 		Endpoint:       twitterOAuth1.AuthorizeEndpoint,
 	}
 	waitlistApiMux.Get("/logout", cfg.handlerLogout)
