@@ -129,7 +129,7 @@ func (cfg *apiConfig) handlerIssueSessionToken() http.Handler {
 	return http.HandlerFunc(fn)
 }
 
-func destroyCookie(cookieName string) http.Cookie {
+func (cfg *apiconfig) destroyCookie(cookieName string) http.Cookie {
 	cookie := http.Cookie{
 		Name:     cookieName,
 		MaxAge:   -1,
