@@ -76,8 +76,8 @@ func main() {
 	waitlistApiMux.Get("/logout", cfg.handlerLogout)
 	waitlistApiMux.Post("/signup", cfg.handlerWaitlistSignup)
 	waitlistApiMux.Get("/leaderboard", cfg.handlerWaitlistLeaderboard)
-	mux.Handle("/twitter/login", twitter.LoginHandler(oauth1Config, cfg.handlerHomepageRedirection()))
-	mux.Handle("/twitter/callback", twitter.CallbackHandler(oauth1Config, cfg.issueSessionToken(), cfg.handlerHomepageRedirection()))
+	mux.Handle("/twitter/login", twitter.LoginHandler(oauth1Config, nil)
+	mux.Handle("/twitter/callback", twitter.CallbackHandler(oauth1Config, cfg.issueSessionToken(), nil)
 	mux.Handle("/session", cfg.handlerIssueSessionToken())
 
 	mux.Mount("/waitlist/", waitlistMux)
