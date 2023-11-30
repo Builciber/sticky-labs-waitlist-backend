@@ -24,8 +24,8 @@ func (cfg *apiConfig) handlerHome(w http.ResponseWriter, r *http.Request) {
 		cookie := http.Cookie{
 			Name:     "waitlist-referrer",
 			Value:    referrer,
-			MaxAge:   604800,
-			Domain:   "localhost",
+			MaxAge:   144000,
+			Domain:   "stickylabs.xyz",
 			Path:     "/",
 			HttpOnly: true,
 			Secure:   false,
