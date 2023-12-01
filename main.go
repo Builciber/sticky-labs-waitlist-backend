@@ -3,6 +3,7 @@ package main
 import (
 	"database/sql"
 	"internal/database"
+	"fmt"
 	"log"
 	"net/http"
 	"os"
@@ -69,7 +70,7 @@ func main() {
 	oauth1Config := &oauth1.Config{
 		ConsumerKey:    cfg.TwitterConsumerKey,
 		ConsumerSecret: cfg.TwitterConsumerSecret,
-		CallbackURL:    "https://walrus-app-bl8a2.ondigitalocean.app/twitter/callback",
+		CallbackURL:    fmt.Sprintf("https://%s/twitter/callback", cfg.domain),
 		Endpoint:       twitterOAuth1.AuthorizeEndpoint,
 	}
 	waitlistApiMux.Get("/logout", cfg.handlerLogout)
