@@ -20,9 +20,3 @@ WHERE twitter_id = $1;
 
 -- name: GetUserReferralCount :one
 SELECT COUNT(referrer) FROM waitlisted WHERE referrer = $1;
-
--- name: CreateTwitterIDIndex :exec
-CREATE INDEX twitter_id_idx ON waitlisted(twitter_id);
-
--- name: CreateReferrerIndex :exec
-CREATE INDEX referrer_idx ON waitlisted(referrer);
