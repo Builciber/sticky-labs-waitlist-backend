@@ -19,7 +19,4 @@ require (
 	github.com/google/uuid v1.4.0 // indirect
 	github.com/joho/godotenv v1.5.1 // indirect
 	github.com/lib/pq v1.10.9 // indirect
-	github.com/sqlc-dev/sqlc/cmd/sqlc v1.24.0 // indirect
-	github.com/pressly/goose/v3/cmd/goose v3.16.0 // indirect
-
 )
