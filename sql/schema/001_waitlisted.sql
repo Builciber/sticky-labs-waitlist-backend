@@ -10,3 +10,15 @@ CREATE TABLE waitlisted (
 
 -- +goose Down
 DROP TABLE waitlisted;
+
+-- +goose up
+CREATE INDEX IF EXISTS twitter_id_idx ON waitlisted(twitter_id);
+
+-- +goose down
+DROP INDEX IF EXISTS twitter_id_idx;
+
+-- +goose up
+CREATE INDEX IF EXISTS referrer_idx ON waitlisted(referrer);
+
+-- +goose down
+DROP INDEX IF EXISTS referrer_idx;
