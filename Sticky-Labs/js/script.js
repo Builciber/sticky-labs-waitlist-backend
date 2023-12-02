@@ -605,9 +605,9 @@ async function validateAndLog() {
       email: emailInput.value,
       wallet_address: walletInput.value
     }
-    let resp = await sendApplication("https://walrus-app-bl8a2.ondigitalocean.app/waitlist/api/signup", formData)
+    let resp = await sendApplication("https://www.stickylabs.xyz/waitlist/api/signup", formData)
     document.write(resp)
-    window.location.replace("https://walrus-app-bl8a2.ondigitalocean.app/waitlist/profile")
+    window.location.replace("https://www.stickylabs.xyz/waitlist/profile")
   }
 }
 
