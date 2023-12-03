@@ -95,7 +95,7 @@ var homePageHTMLString = `<!DOCTYPE html>
       <div class="content">
         <img src="/Sticky-Labs/images/bg.svg" alt="" class="bg_img" />
         <p class="wave2app">WAVE 2 APPLICATION</p>
-        <button class="connectBtn"><a >Connect 𝕏</a></button>
+        <button class="connectBtn"><a href="/twitter/login">Connect 𝕏</a></button>
       </div>
     </div>
 
