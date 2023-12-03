@@ -36,8 +36,9 @@ func (cfg *apiConfig) handlerServeProfilePage(w http.ResponseWriter, r *http.Req
 		return
 	}
 	userReferralLink := fmt.Sprintf("https://www.stickylabs.xyz/waitlist/?ref=%s", refQueryValue)
-	prefilledMessage := fmt.Sprintf("An%%20L2%%20but%%20for%%20NFTs%%2C%%20that%%27s%%20%%40Labs_Sticky.%%20Get%%20exclusive%%20access%%20to%%20Drops%%2C%%20%%25%%20in%%20revenue%%2C%%20pass%%20into%%20the%%20ecosystem%%20and%%20much%%20more.%%0A%%0ASign-up%%20for%%20wave%%202%%20%%F0%%9F%%91%%87%%3A%%0Ahttps%%3A%%2F%%2Fwww.stickylabs.xyz%%2Fwaitlist%%2F%%3Fref%%3D%s", refQueryValue)
-	twitterShareLink := fmt.Sprintf("https://twitter.com/intent/tweet?text=%s", prefilledMessage)
+	twitterPrefilledMessage := fmt.Sprintf("An%%20L2%%20but%%20for%%20NFTs%%2C%%20that%%27s%%20%%40Labs_Sticky.%%20Get%%20exclusive%%20access%%20to%%20Drops%%2C%%20%%25%%20in%%20revenue%%2C%%20pass%%20into%%20the%%20ecosystem%%20and%%20much%%20more.%%0A%%0ASign-up%%20for%%20wave%%202%%20%%F0%%9F%%91%%87%%3A%%0Ahttps%%3A%%2F%%2Fwww.stickylabs.xyz%%2Fwaitlist%%2F%%3Fref%%3D%s", refQueryValue)
+	prefilledMessage := fmt.Sprintf("An%%20L2%%20but%%20for%%20NFTs%%2C%%20that%%27s%%20Sticky%%20Labs.%%20Get%%20exclusive%%20access%%20to%%20Drops%%2C%%20%%25%%20in%%20revenue%%2C%%20pass%%20into%%20the%%20ecosystem%%20and%%20much%%20more.%%0A%%0ASign-up%%20for%%20wave%%202%%20%%F0%%9F%%91%%87%%3A%%0Ahttps%%3A%%2F%%2Fwww.stickylabs.xyz%%2Fwaitlist%%2F%%3Fref%%3D%s", refQueryValue)
+	twitterShareLink := fmt.Sprintf("https://twitter.com/intent/tweet?text=%s", twitterPrefilledMessage)
 	redditShareLink := fmt.Sprintf("https://www.reddit.com/r/CryptoCurrency/submit?title=Sticky%%20Labs%%20Wave%%202&selftext=true&text=%s", prefilledMessage)
 	telegramShareLink := fmt.Sprintf("https://t.me/share/?text=%s", prefilledMessage)
 	w.Header().Set("Content-Type", "text/html")
